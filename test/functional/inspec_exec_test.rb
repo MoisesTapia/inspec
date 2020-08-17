@@ -456,7 +456,7 @@ Test Summary: 2 successful, 0 failures, 0 skipped\n"
 
   describe "when using profiles on the supermarket" do
     it "can run supermarket profiles directly from the command line" do
-      skip_windows! # can't modify /tmp -> / because it is in supermarket
+      skip_windows! # can't modify /tmp -> / because it is in supermarket - Breakage confirmed
 
       inspec("exec supermarket://nathenharvey/tmp-compliance-profile --no-create-lockfile")
 
@@ -476,7 +476,7 @@ Test Summary: 2 successful, 0 failures, 0 skipped\n"
     end
 
     it "can run supermarket profiles from inspec.yml" do
-      skip_windows! # can't modify /tmp -> / because it is in supermarket
+      skip_windows! # can't modify /tmp -> / because it is in supermarket - Breakage confirmed
 
       inspec("exec #{File.join(profile_path, "supermarket-dep")} --no-create-lockfile")
 
