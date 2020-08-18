@@ -26,7 +26,7 @@ class InitPluginCli < Minitest::Test
 
       run_result = run_inspec_process("init plugin --no-prompt #{plugin}", prefix: "cd #{dir} &&")
 
-      skip_windows! # Breakage confirmed: https://github.com/inspec/inspec/issues/5214 
+      skip_windows! # Breakage confirmed: https://github.com/inspec/inspec/issues/5214
       assert_includes run_result.stdout, "Creating new inspec plugin at"
       assert_includes run_result.stdout, plugin
 
