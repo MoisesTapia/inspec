@@ -6,14 +6,14 @@ class PluginManagerCliHelp < Minitest::Test
   # Main inspec help subcommand listing
   def test_inspec_help_includes_plugin
     result = run_inspec_process_with_this_plugin("help")
-    skip_windows!
+    skip_windows! # Breakage confirmed: https://github.com/inspec/inspec/issues/5214
     assert_includes result.stdout, "inspec plugin"
   end
 
   # inspec plugin help subcommand listing
   def test_inspec_plugin_help_includes_plugin
     result = run_inspec_process_with_this_plugin("plugin help")
-    skip_windows!
+    skip_windows! # Breakage confirmed: https://github.com/inspec/inspec/issues/5214
     assert_includes result.stdout, "inspec plugin list"
     assert_includes result.stdout, "inspec plugin search"
     assert_includes result.stdout, "inspec plugin install"
